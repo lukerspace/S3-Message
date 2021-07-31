@@ -6,3 +6,5 @@ S3 bucket , CDN , ACM , ROUTE53
 透過 ROUTE53 去使臨時域名作更新
 
 完成使用 CDN 去訪問將被託管的 S3 BUCKET
+
+<img src=readme.png/>
