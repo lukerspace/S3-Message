@@ -1,7 +1,6 @@
 from flask import Flask, render_template
 from datetime import timedelta
 import os
-
 from api.upload import api_upload
 
 app = Flask(__name__)

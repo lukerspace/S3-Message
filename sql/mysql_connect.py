@@ -23,7 +23,7 @@ def closePool(connection_object, cursor):
    if connection_object.is_connected():
       cursor.close()
       connection_object.close()    
-# ====================
+
 # for /api/upload
 def selectPost(**kwargs):
    try:

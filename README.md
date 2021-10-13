@@ -1,10 +1,10 @@
 # AWS S3
 
-S3 bucket , CDN , ACM , ROUTE53
+### S3 , CDN , ACM , ROUTE53
 
-在 S3 BUCKET 上傳靜態檔案並且透過 CDN 去將 S3 部屬，透過 CDN 將備用網域 CNAME 託管，並在 ACM 請求匯入託管的憑證(安全性，名字一致)
-透過 ROUTE53 去使臨時域名作更新
+透過 AWS (CloundFront) CDN 服務，將檔案傳送 S3 BUCKET 部屬， 將 CDN 備用網域 (CNAME) 匯入 ACM 憑證託管，並使用 ROUTE53 去使臨時域名作更新。
 
-完成使用 CDN 去訪問將被託管的 S3 BUCKET
-
-<img src=readme.png/>
+1. Upload image and text to the S3 meanwhile create a URL.
+2. Insert url & text into MySql database.
+3. Api fetch the database
+4. javascript visualize the data

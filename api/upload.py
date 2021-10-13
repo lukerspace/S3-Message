@@ -1,12 +1,10 @@
-from mysql_connect import insertPost
 import sys
-sys.path.append("..")
-
+sys.path.append("./")
+sys.path.append("./sql")
+from mysql_connect import *
 import logging
 from flask import request, Blueprint, jsonify
 from werkzeug.utils import secure_filename
-
-from mysql_connect import *
 from s3 import *
 from config import *
 
@@ -16,7 +14,8 @@ api_upload = Blueprint('api_upload', __name__)
 def postUpload(): 
 	try:
 		text = request.form["text"]
-
+		print(text)
+		
 		if not text:
 			return jsonify({ "error": True, "message": "文字未填" })
 
@@ -34,7 +33,7 @@ def postUpload():
 		
 		insertPost(description = text, image_url = imageUrl)
 
-		selectedPost = selectPost(image_url = imageUrl)
+		selectedPost = selectPost(description = text,image_url = imageUrl)
 
 		if selectedPost:
 			data = {

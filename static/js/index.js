@@ -8,6 +8,7 @@ let indexModels = {
   uploadData: {},
   fetchPostUploadAPI: function () {
     const text = uploadForm.querySelector("#uploadText").value;
+    // console.log(text);
 
     const src = "/api/upload";
 
@@ -48,6 +49,8 @@ let indexViews = {
     const textElement = document.createElement("div");
     textElement.classList.add("text");
     textElement.textContent = indexModels.uploadData["text"];
+    console.log(indexModels.uploadData);
+    console.log(indexModels.uploadData["text"]);
 
     const imageElement = document.createElement("div");
     imageElement.classList.add("image");
